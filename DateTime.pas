@@ -21,4 +21,18 @@
     Print($'{newline}{newline}В году 366 дней')
   else
     Print($'{newline}{newline}В году 365 дней');
+  
+  var year_1 := ReadInteger($'{newline}{newline}Введите целое положительное число - первый год:');
+  var year_2 := ReadInteger('Введите целое положительное число - второй год:');
+  Assert(year_1 > 0);
+  Assert(year_2 > 0);
+  var sum := 0;
+  for var i := year_1 to year_2 do
+    begin
+      if (((i.Divs(4)) and (i mod 100 <> 0)) or (i.Divs(400))) then
+        sum += 366
+      else
+        sum += 365;
+    end;
+  Print($'Сумма дней между {year_1} и {year_2} годами: {sum}');
 end.
