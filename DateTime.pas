@@ -16,4 +16,9 @@
     Print('1')
   else
     Print('2');
+  
+  if (((year.Divs(4)) and (year mod 100 <> 0)) or (year.Divs(400))) then
+    Print($'{newline}{newline}В году 366 дней')
+  else
+    Print($'{newline}{newline}В году 365 дней');
 end.
