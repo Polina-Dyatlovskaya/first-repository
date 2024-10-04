@@ -28,11 +28,14 @@
   Assert(year_2 > 0);
   var sum := 0;
   for var i := year_1 to year_2 do
-    begin
-      if (((i.Divs(4)) and (i mod 100 <> 0)) or (i.Divs(400))) then
-        sum += 366
-      else
-        sum += 365;
-    end;
+  begin
+    if (((i.Divs(4)) and (i mod 100 <> 0)) or (i.Divs(400))) then
+      sum += 366
+    else
+      sum += 365;
+  end;
   Print($'Сумма дней между {year_1} и {year_2} годами: {sum}');
+  
+  var hours := ReadInteger($'{newline}{newline}Введите целое число - количество часов:');
+  Print($'В {hours} часов {hours * 3600} секунд');
 end.
